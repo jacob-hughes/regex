@@ -1,6 +1,7 @@
 use core::{borrow::Borrow, cell::RefCell};
 
-use alloc::{sync::Arc, vec, vec::Vec};
+use alloc::{sync::Arc as ArcActual, vec, vec::Vec};
+use std::gc::Gc as Arc;
 
 use regex_syntax::{
     hir::{self, Hir},

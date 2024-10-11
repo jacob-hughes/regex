@@ -88,7 +88,8 @@ as long as everything in this module agrees.
 
 use core::mem;
 
-use alloc::{sync::Arc, vec::Vec};
+use alloc::{sync::Arc as ArcActual, vec::Vec};
+use std::gc::Gc as Arc;
 
 use crate::util::{
     int::{I32, U32},

@@ -3,7 +3,8 @@ use core::{
     panic::{RefUnwindSafe, UnwindSafe},
 };
 
-use alloc::{boxed::Box, sync::Arc, vec, vec::Vec};
+use alloc::{boxed::Box, sync::Arc as ArcActual, vec, vec::Vec};
+use std::gc::Gc as Arc;
 
 use regex_syntax::{
     ast,

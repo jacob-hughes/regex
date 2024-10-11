@@ -3,7 +3,8 @@ use core::{
     panic::{RefUnwindSafe, UnwindSafe},
 };
 
-use alloc::sync::Arc;
+use alloc::sync::Arc as ArcActual;
+use std::gc::Gc as Arc;
 
 use regex_syntax::hir::{literal, Hir};
 

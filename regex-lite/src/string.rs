@@ -1,5 +1,5 @@
 use alloc::{
-    borrow::Cow, boxed::Box, string::String, string::ToString, sync::Arc, vec,
+    borrow::Cow, boxed::Box, string::String, string::ToString, sync::Arc as ArcActual, vec,
     vec::Vec,
 };
 

@@ -539,6 +539,8 @@ enables `alloc` and `nfa-thompson`.
 
 // We are no_std.
 #![no_std]
+#![feature(gc)]
+
 // All APIs need docs!
 #![deny(missing_docs)]
 // Some intra-doc links are broken when certain features are disabled, so we
@@ -626,6 +628,10 @@ extern crate std;
 
 #[cfg(feature = "alloc")]
 extern crate alloc;
+
+// use std::gc::GcAllocator;
+// #[global_allocator]
+// static A: GcAllocator = GcAllocator;
 
 #[cfg(doctest)]
 doc_comment::doctest!("../README.md");

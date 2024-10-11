@@ -1073,7 +1073,8 @@ mod tests {
     #[cfg(feature = "std")]
     #[test]
     fn thread_owner_optimization() {
-        use std::{cell::RefCell, sync::Arc, vec};
+        use std::{cell::RefCell, sync::Arc as ArcActual, vec};
+        use std::gc::Gc as Arc;
 
         let pool: Arc<Pool<RefCell<Vec<char>>>> =
             Arc::new(Pool::new(|| RefCell::new(vec!['a'])));

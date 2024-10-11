@@ -1,6 +1,7 @@
 use core::{fmt, mem};
 
-use alloc::{boxed::Box, format, string::String, sync::Arc, vec, vec::Vec};
+use alloc::{boxed::Box, format, string::String, sync::Arc as ArcActual, vec, vec::Vec};
+use std::gc::Gc as Arc;
 
 #[cfg(feature = "syntax")]
 use crate::nfa::thompson::{

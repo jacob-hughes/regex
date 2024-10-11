@@ -1,4 +1,5 @@
 use alloc::string::String;
+use std::gc::Gc as Arc;
 
 use regex_automata::{meta, Input, PatternID, PatternSet, PatternSetIter};
 
@@ -131,7 +132,7 @@ use crate::{Error, RegexSetBuilder};
 #[derive(Clone)]
 pub struct RegexSet {
     pub(crate) meta: meta::Regex,
-    pub(crate) patterns: alloc::sync::Arc<[String]>,
+    pub(crate) patterns: Arc<[String]>,
 }
 
 impl RegexSet {

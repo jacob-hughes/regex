@@ -32,7 +32,8 @@ directly, but for example, if you've compiled an Thompson NFA, then you can use
 underlying `GroupInfo`.
 */
 
-use alloc::{string::String, sync::Arc, vec, vec::Vec};
+use alloc::{string::String, sync::Arc as ArcActual, vec, vec::Vec};
+use std::gc::Gc as Arc;
 
 use crate::util::{
     interpolate,

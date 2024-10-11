@@ -1,6 +1,7 @@
 use core::mem;
 
-use alloc::{sync::Arc, vec, vec::Vec};
+use alloc::{sync::Arc as ArcActual, vec, vec::Vec};
+use std::gc::Gc as Arc;
 
 use crate::{
     nfa::thompson::{
@@ -864,7 +865,7 @@ impl Builder {
     ///     util::primitives::StateID,
     /// };
     ///
-    /// let name = Some(std::sync::Arc::from("foo"));
+    /// let name = Some(std::sync::Arc as ArcActual::from("foo"));
     /// let mut builder = Builder::new();
     /// builder.start_pattern()?;
     /// // 0th capture group should always be unnamed.
@@ -887,7 +888,7 @@ impl Builder {
     /// distinct patterns is okay:
     ///
     /// ```
-    /// use std::sync::Arc;
+    /// use std::sync::Arc as ArcActual;
     ///
     /// use regex_automata::{
     ///     nfa::thompson::{pikevm::PikeVM, Builder, Transition},

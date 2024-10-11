@@ -23,11 +23,12 @@
 
 use alloc::{
     string::{String, ToString},
-    sync::Arc,
+    sync::Arc as ArcActual,
     vec,
     vec::Vec,
 };
 
+use std::gc::Gc as Arc;
 use regex_automata::{
     meta, nfa::thompson::WhichCaptures, util::syntax, MatchKind,
 };

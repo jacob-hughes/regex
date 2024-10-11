@@ -1,6 +1,7 @@
 use core::{cell::RefCell, mem::size_of};
 
-use alloc::{string::String, sync::Arc, vec, vec::Vec};
+use alloc::{string::String, sync::Arc as ArcActual, vec, vec::Vec};
+use std::gc::Gc as Arc;
 
 use crate::{
     error::Error,

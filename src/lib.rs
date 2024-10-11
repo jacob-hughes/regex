@@ -1316,6 +1316,11 @@ this for literal optimizations.
 #![deny(missing_docs)]
 #![cfg_attr(feature = "pattern", feature(pattern))]
 #![warn(missing_debug_implementations)]
+#![feature(gc)]
+
+use std::gc::GcAllocator;
+#[global_allocator]
+static A: GcAllocator = GcAllocator;
 
 #[cfg(doctest)]
 doc_comment::doctest!("../README.md");

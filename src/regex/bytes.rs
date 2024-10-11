@@ -1,5 +1,6 @@
-use alloc::{borrow::Cow, string::String, sync::Arc, vec::Vec};
+use alloc::{borrow::Cow, string::String, sync::Arc as ArcActual, vec::Vec};
 
+use std::gc::Gc as Arc;
 use regex_automata::{meta, util::captures, Input, PatternID};
 
 use crate::{bytes::RegexBuilder, error::Error};

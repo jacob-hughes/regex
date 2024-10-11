@@ -46,7 +46,8 @@ use core::{
 };
 
 #[cfg(feature = "alloc")]
-use alloc::sync::Arc;
+use alloc::sync::Arc as ArcActual;
+use std::gc::Gc as Arc;
 
 #[cfg(feature = "syntax")]
 use regex_syntax::hir::{literal, Hir};
